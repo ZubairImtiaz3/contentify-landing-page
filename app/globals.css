@@ -4,7 +4,7 @@
  
 @layer base {
   :root {
-     --gradient: linear-gradient(to top left,#72C6EF,#004E8F);
+    --gradient: linear-gradient(to top left,#72C6EF,#004E8F);
 
     --background: 212 52% 5.52%;
     --foreground: 212 8% 98.45%;
