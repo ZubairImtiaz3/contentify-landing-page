@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+    <section className="w-full py-24 lg:py-32 xl:py-48">
       <div className="px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -15,7 +15,7 @@ const Hero = () => {
             </p>
           </div>
           <div className="w-full max-w-sm space-y-2">
-            <div className="flex space-x-2">
+            <div className="flex gap-2 flex-wrap sm:flex-nowrap justify-center items-center">
               <Button className="w-full" size="lg">
                 Get from GitHub
               </Button>
