@@ -2,7 +2,7 @@ import { Icons } from "@/components/ui/icons";
 
 export const Header = () => {
   return (
-    <section className="bg-primary py-3 fixed top-2 left-1/2 transform -translate-x-1/2 w-19rem rounded-full">
+    <section className="bg-primary py-3 fixed top-2 left-1/2 transform -translate-x-1/2 w-[19rem] rounded-full">
       <div className="flex items-center justify-center space-x-4 max-w-[85%] mx-auto">
         <a
           className="text-gray-700"
