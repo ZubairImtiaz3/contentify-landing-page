@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { incrementCount } from "@/actions/download";
 
 const Hero = () => {
   return (
@@ -18,12 +19,17 @@ const Hero = () => {
           </div>
           <div className="w-full max-w-sm space-y-2">
             <div className="flex gap-2 flex-wrap sm:flex-nowrap justify-center items-center">
-              <Button className="w-full" size="lg">
-                Get from GitHub
-              </Button>
-              <Button className="w-full" size="lg">
-                Download Extension
-              </Button>
+              <a target="_blank" rel="noopener" href="#">
+                <Button className="w-full" size="lg">
+                  Get from GitHub
+                </Button>
+              </a>
+
+              <form action={incrementCount}>
+                <Button className="w-full" size="lg">
+                  Download Extension
+                </Button>
+              </form>
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400">
               &ldquo;Get from GitHub&rdquo; Or By clicking &ldquo;Download

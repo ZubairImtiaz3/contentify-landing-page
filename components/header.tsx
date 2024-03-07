@@ -1,6 +1,9 @@
 import { Icons } from "@/components/ui/icons";
+import { getDownloadCount } from "@/actions/download";
 
-export const Header = () => {
+export const Header = async () => {
+  const { downloadCount } = await getDownloadCount();
+
   return (
     <section className="bg-primary py-3 fixed top-2 left-1/2 transform -translate-x-1/2 w-[19rem] rounded-full">
       <div className="flex items-center justify-center space-x-4 max-w-[85%] mx-auto">
@@ -25,7 +28,9 @@ export const Header = () => {
         >
           <Icons.gitHub className="h-6 w-6" />
         </a>
-        <p className="text-primary-foreground pt-1">100+ Downloads</p>
+        <p className="text-primary-foreground pt-1">
+          {downloadCount?.downloadCount}+ Downloads
+        </p>
       </div>
     </section>
   );
