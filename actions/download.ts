@@ -1,25 +1,28 @@
 "use server";
-import clientPromise from "@/lib/mongodb";
-import { Db } from "mongodb";
+import connectDb from "@/lib/db";
+import DownloadModel from "@/models/DownloadModel";
 import { revalidatePath } from "next/cache";
 
-const client = await clientPromise;
-const db: Db = client.db("linkedin-extension");
-
 export const getDownloadCount = async () => {
-  const collection = db.collection("downloads");
-  const downloadCount = await collection.findOne({});
-
-  return {
-    downloadCount,
-  };
+  try {
+    await connectDb();
+    const download = await DownloadModel.findOne({});
+    return {
+      downloadCount: download ? download.downloadCount : 0,
+    };
+  } catch (error) {
+    console.error("Error getting download count:", error);
+    throw error;
+  }
 };
 
 export const incrementCount = async () => {
-  const collection = db.collection("downloads");
-
-  //increment the downloadCount by 1
-  await collection.updateOne({}, { $inc: { downloadCount: 1 } });
-
+  try {
+    await connectDb();
+    await DownloadModel.updateOne({}, { $inc: { downloadCount: 1 } });
+  } catch (error) {
+    console.error("Error incrementing download count:", error);
+    throw error;
+  }
   revalidatePath("/");
 };

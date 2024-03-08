@@ -24,12 +24,12 @@ export const Header = async () => {
         <a
           className="text-gray-700"
           target="_blank"
-          href="https://github.com/ZubairImtiaz3/"
+          href="https://github.com/ZubairImtiaz3Property/"
         >
           <Icons.gitHub className="h-6 w-6" />
         </a>
         <p className="text-primary-foreground pt-1">
-          {downloadCount?.downloadCount}+ Downloads
+          {downloadCount}+ Downloads
         </p>
       </div>
     </section>
