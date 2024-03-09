@@ -18,13 +18,35 @@ export const getDownloadCount = async () => {
 };
 
 export const incrementCount = async () => {
-  console.log(headers().get("x-forwarded-for")?.split(",")[0].trim());
+  const userIP = headers().get("x-forwarded-for")?.split(",")[0].trim();
+  console.log("User's Ip", userIP);
+
   try {
     await connectDb();
-    await DownloadModel.updateOne({}, { $inc: { downloadCount: 1 } });
+
+    // Check if the user's IP is present in the last 30 minutes
+    const userRecord = await DownloadModel.findOne({
+      "userDownloads.ip": userIP,
+      "userDownloads.timestamp": {
+        $gte: new Date(Date.now() - 30 * 60 * 1000),
+      },
+    });
+
+    if (!userRecord) {
+      // If the user's IP is not present in the last 30 minutes, increment count
+      await DownloadModel.updateOne(
+        {},
+        {
+          $inc: { downloadCount: 1 },
+          $push: { userDownloads: { ip: userIP, timestamp: new Date() } },
+        }
+      );
+    }
   } catch (error) {
     console.error("Error incrementing download count:", error);
     throw error;
   }
+
   revalidatePath("/");
 };
+
