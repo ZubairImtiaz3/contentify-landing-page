@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { incrementCount } from "@/actions/download";
+import DownloadBtns from "./download-btn";
 
 const Hero = () => {
   return (
@@ -19,24 +18,7 @@ const Hero = () => {
             </p>
           </div>
           <div className="w-full max-w-sm space-y-2">
-            <div className="flex gap-2 flex-wrap sm:flex-nowrap justify-center items-center">
-              <a
-                className="grow"
-                target="_blank"
-                rel="noopener"
-                href="https://github.com/ZubairImtiaz3/Contentify"
-              >
-                <Button className="w-full" size="lg">
-                  Get from GitHub
-                </Button>
-              </a>
-
-              <form className="grow" action={incrementCount}>
-                <Button className="w-full" size="lg">
-                  Download Extension
-                </Button>
-              </form>
-            </div>
+            <DownloadBtns />
             <p className="text-xs text-gray-500 dark:text-gray-400">
               &ldquo;Get from GitHub&rdquo; Or By clicking &ldquo;Download
               Extension&rdquo;, you will directly download the extension file.
