@@ -1,6 +1,7 @@
 "use server";
 import connectDb from "@/lib/db";
 import DownloadModel from "@/models/DownloadModel";
+import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
 
 export const getDownloadCount = async () => {
@@ -17,6 +18,7 @@ export const getDownloadCount = async () => {
 };
 
 export const incrementCount = async () => {
+  console.log(headers().get("x-forwarded-for")?.split(",")[0].trim());
   try {
     await connectDb();
     await DownloadModel.updateOne({}, { $inc: { downloadCount: 1 } });
