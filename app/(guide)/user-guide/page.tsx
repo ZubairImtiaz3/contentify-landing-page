@@ -1,4 +1,9 @@
 import Guide from "@/components/guide";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "User Guide",
+};
 
 const page = () => {
   const steps = [

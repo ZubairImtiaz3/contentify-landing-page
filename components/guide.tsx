@@ -15,7 +15,7 @@ interface GuideProps {
 const Guide: React.FC<GuideProps> = ({ title, steps }) => {
   return (
     <section>
-      <div className="text-center px-4 md:px-6 py-12 space-y-4 md:py-24 md:space-y-6">
+      <div className="text-center px-4 md:px-6 py-24 space-y-4 md:space-y-6">
         <div className="space-y-8 md:space-y-14">
           <h2 className="text-3xl font-bold tracking-tighter/none">
             {title} Guide
@@ -39,8 +39,9 @@ const Guide: React.FC<GuideProps> = ({ title, steps }) => {
           </div>
         </div>
       </div>
-
-      <ScrollHideButton />
+      <div className="hidden md:block">
+        <ScrollHideButton />
+      </div>
     </section>
   );
 };

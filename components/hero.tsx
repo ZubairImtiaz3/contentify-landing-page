@@ -8,24 +8,30 @@ const Hero = () => {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="flex gap-1 justify-center items-baseline">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none title [background:var(--gradient)] !bg-clip-text text-transparent !bg-cover !bg-center transition-all leading-none">
+              <h1 className="text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none title [background:var(--gradient)] !bg-clip-text text-transparent !bg-cover !bg-center transition-all leading-none uppercase">
                 Contentify
               </h1>
             </div>
             <p className="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400">
-              The official VS Code extension. Supercharge your workflow with
-              advanced features, AI-powered assistance, and more.
+              A Chrome extension that effortlessly automates Linkedin scrolling
+              and scrapes posts/content based on your keywords. Save time, stay
+              informed, and make the most out of your networking experience.
             </p>
           </div>
           <div className="w-full max-w-sm space-y-2">
             <div className="flex gap-2 flex-wrap sm:flex-nowrap justify-center items-center">
-              <a target="_blank" rel="noopener" href="#">
+              <a
+                className="grow"
+                target="_blank"
+                rel="noopener"
+                href="https://github.com/ZubairImtiaz3/Contentify"
+              >
                 <Button className="w-full" size="lg">
                   Get from GitHub
                 </Button>
               </a>
 
-              <form action={incrementCount}>
+              <form className="grow" action={incrementCount}>
                 <Button className="w-full" size="lg">
                   Download Extension
                 </Button>

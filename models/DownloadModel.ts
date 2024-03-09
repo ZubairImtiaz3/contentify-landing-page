@@ -1,4 +1,4 @@
-import { Schema, model, Document } from "mongoose";
+import { Schema, model, Document, models } from "mongoose";
 
 interface Download extends Document {
   downloadCount: number;
@@ -24,6 +24,7 @@ const downloadSchema = new Schema({
   ],
 });
 
-const DownloadModel = model<Download>("Download", downloadSchema);
+const DownloadModel =
+  models.Download || model<Download>("Download", downloadSchema);
 
 export default DownloadModel;
