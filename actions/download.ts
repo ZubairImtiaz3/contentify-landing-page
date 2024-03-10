@@ -48,5 +48,7 @@ export const incrementCount = async () => {
   }
 
   revalidatePath("/");
+  revalidatePath("/install-guide");
+  revalidatePath("/user-guide");
 };
 
