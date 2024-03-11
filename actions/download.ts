@@ -2,7 +2,6 @@
 import connectDb from "@/lib/db";
 import DownloadModel from "@/models/DownloadModel";
 import { headers } from "next/headers";
-import { revalidatePath } from "next/cache";
 
 export const getDownloadCount = async () => {
   try {
@@ -46,9 +45,5 @@ export const incrementCount = async () => {
     console.error("Error incrementing download count:", error);
     throw error;
   }
-
-  revalidatePath("/");
-  revalidatePath("/install-guide");
-  revalidatePath("/user-guide");
 };
 

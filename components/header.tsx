@@ -1,7 +1,9 @@
 import { Icons } from "@/components/ui/icons";
 import { getDownloadCount } from "@/actions/download";
+import { unstable_noStore as noStore } from "next/cache";
 
 export const Header = async () => {
+  noStore();
   const { downloadCount } = await getDownloadCount();
 
   return (
