@@ -5,6 +5,7 @@ import ScrollHideButton from "@/components/scroll-hide-btn";
 interface Step {
   title: string;
   description: string;
+  imageSrc: string;
 }
 
 interface GuideProps {
@@ -24,12 +25,14 @@ const Guide: React.FC<GuideProps> = ({ title, steps }) => {
             {steps.map((step, index) => (
               <div key={index} className="space-y-2">
                 <h3 className="font-bold">{step.title}</h3>
-                <p>{step.description}</p>
+                {step.description.split("\n").map((line, i) => (
+                  <p key={i}>{line}</p>
+                ))}
                 <Image
                   alt={`Step ${index + 1}`}
                   className="rounded-lg object-cover"
                   height={400}
-                  src="/placeholder.svg"
+                  src={step.imageSrc}
                   layout="responsive"
                   objectFit="cover"
                   width={600}

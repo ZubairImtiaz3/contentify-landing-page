@@ -10,17 +10,32 @@ const page = () => {
     {
       title: "Step 1: Download the Extension",
       description:
-        "In VS Code, go to the Extensions view (Ctrl+Shift+X), search for the extension, and click the Install button.",
+        "Click Download Extension button. Once downloaded, Extract the files from the archive.",
+      imageSrc: "/InstallStep1.png",
     },
     {
-      title: "Step 2: Sign in to your Account",
+      title: "Step 2: Open Browser Settings",
       description:
-        "After the extension is installed, sign in to your account using the VS Code command palette (Ctrl+Shift+P) and the command 'MyAccount: SignIn'.",
+        "Open a new tab in your Chrome and enter the following URL: chrome://extensions \nPress Enter to navigate to the Extensions settings page.",
+      imageSrc: "/InstallStep2.png",
     },
     {
-      title: "Step 3: Open a Project",
+      title: "Step 3: Enable Developer Mode",
       description:
-        "Open a project in VS Code. You can now access the extension's features from the sidebar.",
+        "On the Extensions settings page, look for the Developer mode toggle switch. \nEnable this option.",
+      imageSrc: "/InstallStep3.png",
+    },
+    {
+      title: "Step 4: Install the Extension",
+      description:
+        'Drag and drop the extracted folder (e.g "contentify") directly into the Extensions settings page.',
+      imageSrc: "/InstallStep4.png",
+    },
+    {
+      title: "Step 5: Install the Extension",
+      description:
+        'Drag and drop the extracted folder (e.g "contentify") directly into the Extensions settings page.',
+      imageSrc: "/InstallStep5.png",
     },
   ];
 
