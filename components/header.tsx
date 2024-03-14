@@ -26,7 +26,7 @@ export const Header = async () => {
         <a
           className="text-gray-700"
           target="_blank"
-          href="https://github.com/ZubairImtiaz3Property/"
+          href="https://github.com/ZubairImtiaz3"
         >
           <Icons.gitHub className="h-6 w-6" />
         </a>
