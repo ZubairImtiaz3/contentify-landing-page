@@ -26,15 +26,15 @@ const page = () => {
       imageSrc: "/InstallStep3.png",
     },
     {
-      title: "Step 4: Install the Extension",
+      title: "Step 4: Load Extension Unpacked",
       description:
-        'Drag and drop the extracted folder (e.g "contentify") directly into the Extensions settings page.',
+        'Locate and click on the "Load unpacked" button positioned at the top left corner of the Extensions settings page.',
       imageSrc: "/InstallStep4.png",
     },
     {
       title: "Step 5: Install the Extension",
       description:
-        'Drag and drop the extracted folder (e.g "contentify") directly into the Extensions settings page.',
+        'Navigate to the Download folder and select the extracted folder (e.g., "contentify") to complete the installation.',
       imageSrc: "/InstallStep5.png",
     },
   ];

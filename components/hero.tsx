@@ -12,9 +12,9 @@ const Hero = () => {
               </h1>
             </div>
             <p className="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400">
-              A Chrome extension that effortlessly automates Linkedin scrolling
-              and scrapes posts/content based on your keywords. Save time, stay
-              informed, and make the most out of your networking experience.
+              A Chrome extension that automates Linkedin scrolling and scrapes
+              posts/content based on your keywords. Save time, stay informed,
+              and make the most out of your networking experience.
             </p>
           </div>
           <div className="w-full max-w-sm space-y-2">

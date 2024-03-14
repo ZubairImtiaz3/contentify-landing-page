@@ -21,12 +21,15 @@ const Guide: React.FC<GuideProps> = ({ title, steps }) => {
           <h2 className="text-3xl font-bold tracking-tighter/none">
             {title} Guide
           </h2>
-          <div className="space-y-4 text-gray-500 dark:text-gray-400 flex flex-col justify-center max-w-[700px] m-auto">
+          <div className="space-y-16 text-gray-500 dark:text-gray-400 flex flex-col justify-center max-w-[700px] m-auto">
             {steps.map((step, index) => (
-              <div key={index} className="space-y-2">
+              <div key={index} className="space-y-4">
                 <h3 className="font-bold">{step.title}</h3>
                 {step.description.split("\n").map((line, i) => (
-                  <p key={i}>{line}</p>
+                  <React.Fragment key={i}>
+                    {line}
+                    <br />
+                  </React.Fragment>
                 ))}
                 <Image
                   alt={`Step ${index + 1}`}
