@@ -1,6 +1,7 @@
 import { Icons } from "@/components/ui/icons";
 import { getDownloadCount } from "@/actions/download";
 import { unstable_noStore as noStore } from "next/cache";
+import NumberTicker from "@/components/number-ticker";
 
 export const Header = async () => {
   noStore();
@@ -30,8 +31,9 @@ export const Header = async () => {
         >
           <Icons.gitHub className="h-6 w-6" />
         </a>
+
         <p className="text-primary-foreground pt-1">
-          {downloadCount}+ Downloads
+          <NumberTicker value={downloadCount} />+ Downloads
         </p>
       </div>
     </section>
