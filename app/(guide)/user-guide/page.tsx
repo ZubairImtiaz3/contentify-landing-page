@@ -36,6 +36,12 @@ const page = () => {
       description: "An example of found posts below.",
       imageSrc: "/GuideStep5.png",
     },
+    {
+      title: "Update 1.1.0: Save Keywords (New Feature)",
+      description:
+        "Now, you can save/remember keywords, eliminating the need to re-enter them each time the extension loads.",
+      imageSrc: "/update1.png",
+    },
   ];
 
   return (
