@@ -6,11 +6,7 @@ import { incrementCount } from "@/actions/download";
 const DownloadBtns = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     window.location.href = process.env.NEXT_PUBLIC_DOWNLOAD_URL || "";
-
-    console.log(process.env.NEXT_PUBLIC_DOWNLOAD_URL);
-
     await incrementCount();
   };
 
@@ -28,7 +24,12 @@ const DownloadBtns = () => {
       </a>
 
       <form className="grow" onSubmit={handleSubmit}>
-        <Button type="submit" className="w-full" size="lg">
+        <Button
+          data-umami-event="Download Button"
+          type="submit"
+          className="w-full"
+          size="lg"
+        >
           Download Extension
         </Button>
       </form>
